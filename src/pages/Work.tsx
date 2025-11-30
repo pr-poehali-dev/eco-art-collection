@@ -6,11 +6,20 @@ import { useState } from "react";
 
 const alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЭЮЯ".split("");
 
-const mockGallery = [
+const defaultGallery = [
   "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
   "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg",
   "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
 ];
+
+const galleryData: Record<number, string[]> = {
+  1: [
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/b8a6e5fa-ae36-4e33-90cf-05318c8cb3d5.jpg",
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg",
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
+  ]
+};
 
 const workData: Record<number, { title: string; author: string; content: JSX.Element }> = {
   1: {
@@ -47,6 +56,8 @@ const Work = () => {
   const letter = alphabet[workId - 1] || "А";
   const nextId = workId < 26 ? workId + 1 : 1;
   const prevId = workId > 1 ? workId - 1 : 26;
+  
+  const gallery = galleryData[workId] || defaultGallery;
   
   const currentWork = workData[workId] || {
     title: `Произведение на букву ${letter}`,
@@ -102,13 +113,13 @@ const Work = () => {
             <CardContent className="p-0">
               <div className="relative aspect-video bg-muted overflow-hidden">
                 <img 
-                  src={mockGallery[selectedImage]} 
+                  src={gallery[selectedImage]} 
                   alt="Основное изображение"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-4 flex gap-2 overflow-x-auto">
-                {mockGallery.map((img, index) => (
+                {gallery.map((img, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
