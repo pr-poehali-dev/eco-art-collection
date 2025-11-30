@@ -53,9 +53,16 @@ const Work = () => {
   const workId = parseInt(id || "1");
   const [selectedImage, setSelectedImage] = useState(0);
   
-  const letter = alphabet[workId - 1] || "А";
-  const nextId = workId < 26 ? workId + 1 : 1;
-  const prevId = workId > 1 ? workId - 1 : 26;
+  const isCinema = workId <= 26;
+  const letterIndex = isCinema ? workId - 1 : workId - 27;
+  const letter = alphabet[letterIndex] || "А";
+  
+  const nextId = isCinema 
+    ? (workId < 26 ? workId + 1 : 1)
+    : (workId < 52 ? workId + 1 : 27);
+  const prevId = isCinema
+    ? (workId > 1 ? workId - 1 : 26)
+    : (workId > 27 ? workId - 1 : 52);
   
   const gallery = galleryData[workId] || defaultGallery;
   
@@ -84,7 +91,7 @@ const Work = () => {
             <Link to="/">
               <Button variant="ghost" size="sm" className="gap-2">
                 <Icon name="ArrowLeft" size={18} />
-                К каталогу
+                {isCinema ? 'Кино' : 'Литература'}
               </Button>
             </Link>
             <h1 className="text-2xl md:text-3xl font-serif font-bold text-primary">
