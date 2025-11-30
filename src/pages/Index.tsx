@@ -3,17 +3,23 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Icon from "@/components/ui/icon";
 
-const alphabet = "АБВГДЛМОПРСТЦ".split("");
+const alphabet = "АБВГДЛМНОПРС".split("");
 
 const cinemaWorksData: Record<number, { title: string; author: string }> = {
   1: { title: "Аватар", author: "Джеймс Кэмерон" },
   2: { title: "ВАЛЛ-И", author: "Эндрю Стэнтон" },
   3: { title: "Во все тяжкие", author: "Винс Гиллиган" },
   4: { title: "Гонка на вымирание", author: "Луи Сайхойос" },
-  5: { title: "Геошторм", author: "Дин Девлин" }
+  5: { title: "Геошторм", author: "Дин Девлин" },
+  6: { title: "Интерстеллар", author: "Кристофер Нолан" },
+  7: { title: "Марсианин", author: "Ридли Скотт" },
+  8: { title: "Наша планета", author: "Netflix" },
+  9: { title: "Обливион", author: "Джозеф Косински" }
 };
 
-const literatureWorksData: Record<number, { title: string; author: string }> = {};
+const literatureWorksData: Record<number, { title: string; author: string }> = {
+  7: { title: "Маленький принц", author: "Антуан де Сент-Экзюпери" }
+};
 
 const createWorks = (dataMap: Record<number, { title: string; author: string }>, idOffset: number) => {
   return alphabet.map((letter, index) => {
