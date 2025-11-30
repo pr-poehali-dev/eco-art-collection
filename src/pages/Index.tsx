@@ -4,17 +4,29 @@ import Icon from "@/components/ui/icon";
 
 const alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЭЮЯ".split("");
 
-const mockWorks = alphabet.map((letter, index) => ({
-  id: index + 1,
-  letter,
-  title: `Произведение на букву ${letter}`,
-  author: "Автор не указан",
-  preview: index % 3 === 0 
-    ? "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg"
-    : index % 3 === 1
-    ? "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
-    : "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
-}));
+const worksData: Record<number, { title: string; author: string }> = {
+  1: { title: "Аватар", author: "Джеймс Кэмерон" }
+};
+
+const mockWorks = alphabet.map((letter, index) => {
+  const id = index + 1;
+  const workInfo = worksData[id] || {
+    title: `Произведение на букву ${letter}`,
+    author: "Автор не указан"
+  };
+  
+  return {
+    id,
+    letter,
+    title: workInfo.title,
+    author: workInfo.author,
+    preview: index % 3 === 0 
+      ? "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg"
+      : index % 3 === 1
+      ? "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
+      : "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
+  };
+});
 
 const Index = () => {
   return (
