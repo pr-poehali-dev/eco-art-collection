@@ -6,7 +6,9 @@ import Icon from "@/components/ui/icon";
 const alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЭЮЯ".split("");
 
 const cinemaWorksData: Record<number, { title: string; author: string }> = {
-  1: { title: "Аватар", author: "Джеймс Кэмерон" }
+  1: { title: "Аватар", author: "Джеймс Кэмерон" },
+  3: { title: "ВАЛЛ-И", author: "Эндрю Стэнтон" },
+  4: { title: "Во все тяжкие", author: "Винс Гиллиган" }
 };
 
 const literatureWorksData: Record<number, { title: string; author: string }> = {};
