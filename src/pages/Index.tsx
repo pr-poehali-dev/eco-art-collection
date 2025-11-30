@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Icon from "@/components/ui/icon";
 
-const alphabet = "АБВГДЛМНОПРС".split("");
+const alphabet = "АБВГДЛМНОППРСТЦ".split("");
 
 const cinemaWorksData: Record<number, { title: string; author: string }> = {
   1: { title: "Аватар", author: "Джеймс Кэмерон" },
@@ -14,11 +14,19 @@ const cinemaWorksData: Record<number, { title: string; author: string }> = {
   6: { title: "Интерстеллар", author: "Кристофер Нолан" },
   7: { title: "Марсианин", author: "Ридли Скотт" },
   8: { title: "Наша планета", author: "Netflix" },
-  9: { title: "Обливион", author: "Джозеф Косински" }
+  9: { title: "Обливион", author: "Джозеф Косински" },
+  11: { title: "Рио", author: "Карлос Салданья" },
+  13: { title: "Тёмные воды", author: "Тодд Хейнс" }
 };
 
 const literatureWorksData: Record<number, { title: string; author: string }> = {
-  7: { title: "Маленький принц", author: "Антуан де Сент-Экзюпери" }
+  22: { title: "Маленький принц", author: "Антуан де Сент-Экзюпери" },
+  25: { title: "Прощание с Матёрой", author: "Валентин Распутин" },
+  26: { title: "Повелитель мух", author: "Уильям Голдинг" },
+  27: { title: "Под куполом", author: "Стивен Кинг" },
+  28: { title: "Пикник на обочине", author: "Аркадий и Борис Стругацкие" },
+  29: { title: "Светлячок", author: "Харлан Эллисон" },
+  30: { title: "Царь-рыба", author: "Виктор Астафьев" }
 };
 
 const createWorks = (dataMap: Record<number, { title: string; author: string }>, idOffset: number) => {
