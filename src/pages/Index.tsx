@@ -3,12 +3,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Icon from "@/components/ui/icon";
 
-const alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЭЮЯ".split("");
+const alphabet = "АБВГДЛМОПРСТЦ".split("");
 
 const cinemaWorksData: Record<number, { title: string; author: string }> = {
   1: { title: "Аватар", author: "Джеймс Кэмерон" },
-  3: { title: "ВАЛЛ-И", author: "Эндрю Стэнтон" },
-  4: { title: "Во все тяжкие", author: "Винс Гиллиган" }
+  2: { title: "ВАЛЛ-И", author: "Эндрю Стэнтон" },
+  3: { title: "Во все тяжкие", author: "Винс Гиллиган" },
+  4: { title: "Гонка на вымирание", author: "Луи Сайхойос" },
+  5: { title: "Геошторм", author: "Дин Девлин" }
 };
 
 const literatureWorksData: Record<number, { title: string; author: string }> = {};
