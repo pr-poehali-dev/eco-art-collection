@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
 import { useState } from "react";
 
-const alphabet = "АБВВГГИМНОПРТМППСЦ".split("");
+const alphabet = "АБВВГГИМНОПРТДМППСЦ".split("");
 
 const defaultGallery = [
   "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
@@ -80,16 +80,21 @@ const galleryData: Record<number, string[]> = {
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
   16: [
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/4c664158-2eb3-4433-9a97-2b7ab4ee1628.jpg",
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
+  ],
+  17: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/4f0cf106-e9cb-488f-9fc1-edaaed6baf67.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
   ],
-  17: [
+  18: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/beeb9425-79fc-4d41-bf6c-a96c8e612477.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
-  18: [
+  19: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/32c11fdf-b973-43c2-9856-addbb56736dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
@@ -104,12 +109,12 @@ const galleryData: Record<number, string[]> = {
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
   ],
-  21: [
+  20: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/8d07e524-6e5a-47cd-a402-8a001d434e55.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
-  22: [
+  21: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/228dcb30-2847-49b2-8944-aed2c0267777.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
@@ -499,6 +504,27 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
     )
   },
   16: {
+    title: "Дюна",
+    author: "Фрэнк Герберт",
+    content: (
+      <>
+        <p className="mb-4">
+          Книга «Дюна» Фрэнка Герберта — это экологическая притча о дефиците ресурсов, адаптации и последствиях человеческой жадности. Она отражает реальные проблемы Земли: борьбу за воду, нефть и другие природные богатства, а также климатические изменения, предупреждая о рисках потребительства и недальновидности.
+        </p>
+        <p className="mb-4">
+          На планете Арракис пряность и вода становятся метафорами ценных ресурсов. Пряность необходима для межзвёздных путешествий, из-за неё ведутся войны. Вода — источник жизни, за который борются фримены и пришлые колонисты. Их конфликт поднимает тему терраформирования — попытки превратить пустыню в цветущий мир. Но это угрожает песчаным червям, производителям пряности и ключевому звену экосистемы. Возникает вопрос: что важнее — комфорт человечества или сохранение уникальной, пусть и суровой, природы?
+        </p>
+        <p className="mb-4">
+          Герберт показывает: фримены, живущие в гармонии с Арракисом, выживают и процветают, тогда как колонизаторы, пытавшиеся покорить планету, терпят крах. Это подчёркивает взаимосвязь всех элементов экосистемы — разрушение одного ведёт к краху всей системы.
+        </p>
+        <p className="mb-4">
+          «Дюна» — предупреждение: безудержное потребление и жажда власти могут привести к экологической катастрофе, уже становящейся реальностью на Земле.
+        </p>
+        <p className="text-right text-muted-foreground mt-6 italic">Левандовская София</p>
+      </>
+    )
+  },
+  17: {
     title: "Маленький принц",
     author: "Антуан де Сент-Экзюпери",
     content: (
@@ -528,7 +554,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  17: {
+  18: {
     title: "Прощание с Матёрой",
     author: "Валентин Распутин",
     content: (
@@ -546,7 +572,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  18: {
+  19: {
     title: "Повелитель мух",
     author: "Уильям Голдинг",
     content: (
@@ -600,7 +626,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  21: {
+  20: {
     title: "Светлячок",
     author: "Харлан Эллисон",
     content: (
@@ -618,7 +644,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  22: {
+  21: {
     title: "Царь-рыба",
     author: "Виктор Астафьев",
     content: (
