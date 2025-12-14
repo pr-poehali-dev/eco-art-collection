@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
 import { useState } from "react";
 
-const alphabet = "АБВГДЛМНОППРСТЦ".split("");
+const alphabet = "АВВГГИМНОРТМППСЦ".split("");
 
 const defaultGallery = [
   "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
@@ -59,47 +59,47 @@ const galleryData: Record<number, string[]> = {
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
   ],
-  11: [
+  10: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/153900a1-84a1-4a00-86ca-29e365ddb7b3.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
-  13: [
+  11: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/2868d412-e5ae-4fed-80c4-9d3ef3ca16fc.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
-  22: [
+  16: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/4f0cf106-e9cb-488f-9fc1-edaaed6baf67.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
   ],
-  25: [
+  17: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/beeb9425-79fc-4d41-bf6c-a96c8e612477.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
-  26: [
+  18: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/32c11fdf-b973-43c2-9856-addbb56736dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
-  27: [
+  19: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/f98d324a-c346-40a9-85a6-3464f028b8fd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
   ],
-  28: [
+  20: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/b5efab2e-47d5-4a85-bc78-b68dd50aff6e.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
   ],
-  29: [
+  21: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/8d07e524-6e5a-47cd-a402-8a001d434e55.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
-  30: [
+  22: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/228dcb30-2847-49b2-8944-aed2c0267777.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
@@ -381,7 +381,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  11: {
+  10: {
     title: "Рио",
     author: "Карлос Салданья",
     content: (
@@ -402,7 +402,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  13: {
+  11: {
     title: "Тёмные воды",
     author: "Тодд Хейнс",
     content: (
@@ -424,7 +424,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  22: {
+  16: {
     title: "Маленький принц",
     author: "Антуан де Сент-Экзюпери",
     content: (
@@ -454,7 +454,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  25: {
+  17: {
     title: "Прощание с Матёрой",
     author: "Валентин Распутин",
     content: (
@@ -472,7 +472,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  26: {
+  18: {
     title: "Повелитель мух",
     author: "Уильям Голдинг",
     content: (
@@ -490,7 +490,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  27: {
+  19: {
     title: "Под куполом",
     author: "Стивен Кинг",
     content: (
@@ -508,7 +508,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  28: {
+  20: {
     title: "Пикник на обочине",
     author: "Аркадий и Борис Стругацкие",
     content: (
@@ -526,7 +526,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  29: {
+  21: {
     title: "Светлячок",
     author: "Харлан Эллисон",
     content: (
@@ -544,7 +544,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  30: {
+  22: {
     title: "Царь-рыба",
     author: "Виктор Астафьев",
     content: (
