@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
 import { useState } from "react";
 
-const alphabet = "АВВГГИМНОРТМППСЦ".split("");
+const alphabet = "АВВГГИМНОПРТМППСЦ".split("");
 
 const defaultGallery = [
   "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
@@ -60,11 +60,16 @@ const galleryData: Record<number, string[]> = {
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
   ],
   10: [
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg",
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
+  ],
+  11: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/153900a1-84a1-4a00-86ca-29e365ddb7b3.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
-  11: [
+  12: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/2868d412-e5ae-4fed-80c4-9d3ef3ca16fc.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
@@ -382,6 +387,40 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
     )
   },
   10: {
+    title: "Планета людей",
+    author: "Джефф Гиббс",
+    content: (
+      <>
+        <h4 className="text-xl font-serif font-semibold text-foreground mb-3">Тёмная сторона зелёной энергетики</h4>
+        <p className="mb-4">
+          Фильм Джеффа Гиббса «Планета людей» бросает вызов устоявшимся представлениям о «зелёной энергетике» и ставит под сомнение саму идею устойчивого развития. В отличие от оптимистичных экологических проектов, этот документальный фильм задаёт тревожный вопрос: спасаем ли мы планету или просто обманываем себя иллюзией спасения?
+        </p>
+        <p className="mb-4">
+          Главная мысль — даже альтернативные источники энергии, такие как солнечные панели, ветряки и биотопливо, не являются по-настоящему чистыми. Их производство требует ресурсов, земель и ископаемого топлива. За многими «зелёными» инициативами стоят корпорации, движимые прибылью, а не заботой о природе.
+        </p>
+        <p className="mb-4">
+          Фильм контрастирует красивые пейзажи с кадрами промышленного разрушения, подчёркивая: человек, каким бы прогрессивным он ни казался, остаётся существом, чрезмерно потребляющим и разрушающим. Даже его попытки спасти планету часто направлены на сохранение собственного комфорта.
+        </p>
+        <p className="mb-4">
+          Гиббс не предлагает готовых решений. Он не призывает вернуться в пещеры, но приглашает зрителя задуматься: возможно, проблема не в технологиях, а в самой логике бесконечного потребления?
+        </p>
+        <p className="mb-4">
+          Фильм построен как публицистическое расследование — с голосом за кадром, интервью, архивными кадрами и мрачной статистикой. Монтаж подчёркивает замкнутый круг: все наши попытки спасти мир снова ведут к эксплуатации ресурсов.
+        </p>
+        <p className="mb-4">
+          «Планета людей» вызвала споры. Его критиковали за пессимизм и устаревшие данные, но именно это делает его ценным — он заставляет думать, сомневаться, анализировать. Кризис экологии — это кризис мышления и культуры потребления.
+        </p>
+        <p className="mb-4">
+          Фильм произвёл на меня сильное впечатление. Он заставил взглянуть на «зелёную энергию» не как на панацею, а как на часть сложной системы, где всё имеет цену. Остаётся тревога — и желание искать не только технологические, но и моральные, культурные, личные пути.
+        </p>
+        <p className="mb-4">
+          «Планета людей» — это не просто фильм о природе. Это фильм о человеке, которому пора осознать: спасая планету, он в первую очередь спасает самого себя.
+        </p>
+        <p className="text-right text-muted-foreground mt-6 italic">Тарасов Дмитрий</p>
+      </>
+    )
+  },
+  11: {
     title: "Рио",
     author: "Карлос Салданья",
     content: (
@@ -402,7 +441,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  11: {
+  12: {
     title: "Тёмные воды",
     author: "Тодд Хейнс",
     content: (
