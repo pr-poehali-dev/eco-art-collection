@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Icon from "@/components/ui/icon";
 
-const alphabet = "АБВГДЛМНОППРСТЦ".split("");
+const alphabet = "АВВГГИМНОПРТМППСЦ".split("");
 
 const cinemaWorksData: Record<number, { title: string; author: string }> = {
   1: { title: "Аватар", author: "Джеймс Кэмерон" },
@@ -15,18 +15,17 @@ const cinemaWorksData: Record<number, { title: string; author: string }> = {
   7: { title: "Марсианин", author: "Ридли Скотт" },
   8: { title: "Наша планета", author: "Netflix" },
   9: { title: "Обливион", author: "Джозеф Косински" },
+  10: { title: "Планета людей", author: "Джефф Гиббс" },
   11: { title: "Рио", author: "Карлос Салданья" },
-  13: { title: "Тёмные воды", author: "Тодд Хейнс" }
+  12: { title: "Тёмные воды", author: "Тодд Хейнс" }
 };
 
 const literatureWorksData: Record<number, { title: string; author: string }> = {
-  22: { title: "Маленький принц", author: "Антуан де Сент-Экзюпери" },
-  25: { title: "Прощание с Матёрой", author: "Валентин Распутин" },
-  26: { title: "Повелитель мух", author: "Уильям Голдинг" },
-  27: { title: "Под куполом", author: "Стивен Кинг" },
-  28: { title: "Пикник на обочине", author: "Аркадий и Борис Стругацкие" },
-  29: { title: "Светлячок", author: "Харлан Эллисон" },
-  30: { title: "Царь-рыба", author: "Виктор Астафьев" }
+  16: { title: "Маленький принц", author: "Антуан де Сент-Экзюпери" },
+  17: { title: "Прощание с Матёрой", author: "Валентин Распутин" },
+  18: { title: "Повелитель мух", author: "Уильям Голдинг" },
+  21: { title: "Светлячок", author: "Харлан Эллисон" },
+  22: { title: "Царь-рыба", author: "Виктор Астафьев" }
 };
 
 const createWorks = (dataMap: Record<number, { title: string; author: string }>, idOffset: number) => {
@@ -93,11 +92,18 @@ const Index = () => {
       <header className="border-b border-border/40 bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-6">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary text-center">
-            Экология в искусстве: от А до Я
+            Экология в искусстве:
+            <br />
+            <span className="text-3xl md:text-4xl">от А до Я</span>
           </h1>
-          <p className="text-center text-muted-foreground mt-2 text-lg">
-            Сборник произведений о взаимосвязи природы и творчества
-          </p>
+          <div className="max-w-3xl mx-auto mt-4 space-y-3">
+            <p className="text-center text-muted-foreground text-lg">
+              Сборник произведений о взаимосвязи природы и творчества
+            </p>
+            <p className="text-center text-muted-foreground text-base leading-relaxed">
+              Этот проект представляет собой исследование того, как кинематограф и литература осмысляют экологические проблемы современности. Здесь собраны анализы произведений, которые поднимают вопросы взаимодействия человека и природы, показывают последствия экологических катастроф и призывают к ответственному отношению к окружающему миру.
+            </p>
+          </div>
         </div>
       </header>
 
