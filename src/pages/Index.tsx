@@ -3,21 +3,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Icon from "@/components/ui/icon";
 
-const alphabet = "АВВГГИМНОПРТМППСЦ".split("");
+const alphabet = "АБВВГГИМНОПРТМППСЦ".split("");
 
 const cinemaWorksData: Record<number, { title: string; author: string }> = {
   1: { title: "Аватар", author: "Джеймс Кэмерон" },
-  2: { title: "ВАЛЛ-И", author: "Эндрю Стэнтон" },
-  3: { title: "Во все тяжкие", author: "Винс Гиллиган" },
-  4: { title: "Гонка на вымирание", author: "Луи Сайхойос" },
-  5: { title: "Геошторм", author: "Дин Девлин" },
-  6: { title: "Интерстеллар", author: "Кристофер Нолан" },
-  7: { title: "Марсианин", author: "Ридли Скотт" },
-  8: { title: "Наша планета", author: "Netflix" },
-  9: { title: "Обливион", author: "Джозеф Косински" },
-  10: { title: "Планета людей", author: "Джефф Гиббс" },
-  11: { title: "Рио", author: "Карлос Салданья" },
-  12: { title: "Тёмные воды", author: "Тодд Хейнс" }
+  2: { title: "Безумный Макс: Дорога ярости", author: "Джордж Миллер" },
+  3: { title: "ВАЛЛ-И", author: "Эндрю Стэнтон" },
+  4: { title: "Во все тяжкие", author: "Винс Гиллиган" },
+  5: { title: "Гонка на вымирание", author: "Луи Сайхойос" },
+  6: { title: "Геошторм", author: "Дин Девлин" },
+  7: { title: "Интерстеллар", author: "Кристофер Нолан" },
+  8: { title: "Марсианин", author: "Ридли Скотт" },
+  9: { title: "Наша планета", author: "Netflix" },
+  10: { title: "Обливион", author: "Джозеф Косински" },
+  11: { title: "Планета людей", author: "Джефф Гиббс" },
+  12: { title: "Рио", author: "Карлос Салданья" },
+  13: { title: "Тёмные воды", author: "Тодд Хейнс" }
 };
 
 const literatureWorksData: Record<number, { title: string; author: string }> = {

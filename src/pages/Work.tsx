@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
 import { useState } from "react";
 
-const alphabet = "АВВГГИМНОПРТМППСЦ".split("");
+const alphabet = "АБВВГГИМНОПРТМППСЦ".split("");
 
 const defaultGallery = [
   "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
@@ -20,56 +20,61 @@ const galleryData: Record<number, string[]> = {
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
   2: [
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/f708841c-d31d-4d31-88f5-fda9498c591b.jpg",
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
+  ],
+  3: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/e659f408-fd97-4294-a3c1-caae2416aa38.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
   ],
-  3: [
+  5: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/c2dcd2f0-2f6b-4f79-899b-c79497f8a0a1.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
   ],
-  4: [
+  5: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/059b53b3-9b71-4481-a1b1-789e00d86b69.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
-  5: [
+  6: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/b6f3dec4-3afb-4a49-badd-bd9ca77ce3bd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
-  6: [
+  7: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/cb70b1f1-c519-498d-803c-89fb61554d22.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
-  7: [
+  8: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/c3359937-6a11-4d78-a828-15c6abc0e4ec.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
-  8: [
+  9: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/f19ee930-a843-4b87-ad38-b22f22766f5c.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
   ],
-  9: [
+  10: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/d0b4473f-df17-4e42-813b-5f65f5b0c38c.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
   ],
-  10: [
+  11: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
   ],
-  11: [
+  12: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/153900a1-84a1-4a00-86ca-29e365ddb7b3.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
-  12: [
+  13: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/2868d412-e5ae-4fed-80c4-9d3ef3ca16fc.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
@@ -134,6 +139,36 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
     )
   },
   2: {
+    title: "Безумный Макс: Дорога ярости",
+    author: "Джордж Миллер",
+    content: (
+      <>
+        <p className="mb-4">
+          В фильме «Безумный Макс: Дорога ярости» вода стала самым ценным ресурсом в постапокалиптическом мире, где её дефицит породил водный капитализм — система, при которой чистая вода контролируется немногими. Действие разворачивается в выжженной пустыне, где выживание зависит от доступа к ресурсам.
+        </p>
+        <p className="mb-4">
+          Режиссёр Джордж Миллер назвал основной темой фильма выживание, сравнив его с американскими вестернами — «вестерном на колёсах». Однако критики видят в нём и более глубокий посыл: попытку сохранить человечность перед лицом полного разрушения цивилизации.
+        </p>
+        <p className="mb-4">
+          Макс Рокатански — прагматичный выживший, сосредоточенный на себе, но в конечном счёте встающий на сторону справедливости. Он не борется за экологию напрямую, но его помощь Фуриосе становится актом сопротивления тирании, основанной на контроле ресурсов.
+        </p>
+        <p className="mb-4">
+          Фуриоса и женщины (включая Вувалини) — символы надежды и восстановления. Они ищут «Зелёные земли» — место, где можно жить в гармонии с природой. Их образ жизни, основанный на собирательстве и возобновляемой энергии, отражает стремление к устойчивому существованию и возвращению к Земле-матери.
+        </p>
+        <p className="mb-4">
+          Противоположность им — Несмертный Джо, олицетворение капитализма ресурсов и жестокой эксплуатации. Он монополизировал воду, используя её как инструмент власти: раздаёт скудные пайки, держит толпу в подчинении и строит иллюзию порядка на разрушенной земле.
+        </p>
+        <p className="mb-4">
+          Хотя фильм не претендует на реалистичность, он отражает реальные страхи: дефицит воды, экологический коллапс, социальное неравенство. Его образы перекликаются с реалиями регионов, страдающих от засух, войн и бедности.
+        </p>
+        <p className="mb-4">
+          С самого начала картина показывает мир, где вода дороже золота, а её контроль позволяет одному человеку диктовать законы. Это не просто боевик — это аллегория на тему того, к чему может привести безудержное потребление и потеря связи с природой.
+        </p>
+        <p className="text-right text-muted-foreground mt-6 italic">Филиппов Давид</p>
+      </>
+    )
+  },
+  3: {
     title: "ВАЛЛ-И",
     author: "Эндрю Стэнтон",
     content: (
@@ -158,7 +193,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  3: {
+  4: {
     title: "Во все тяжкие",
     author: "Винс Гиллиган",
     content: (
@@ -186,7 +221,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  4: {
+  5: {
     title: "Гонка на вымирание",
     author: "Луи Сайхойос",
     content: (
@@ -237,7 +272,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  5: {
+  6: {
     title: "Геошторм",
     author: "Дин Девлин",
     content: (
@@ -270,7 +305,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  6: {
+  7: {
     title: "Интерстеллар",
     author: "Кристофер Нолан",
     content: (
@@ -292,7 +327,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  7: {
+  8: {
     title: "Марсианин",
     author: "Ридли Скотт",
     content: (
@@ -322,7 +357,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  8: {
+  9: {
     title: "Наша планета",
     author: "Netflix",
     content: (
@@ -350,7 +385,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  9: {
+  10: {
     title: "Обливион",
     author: "Джозеф Косински",
     content: (
@@ -386,7 +421,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  10: {
+  11: {
     title: "Планета людей",
     author: "Джефф Гиббс",
     content: (
@@ -420,7 +455,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  11: {
+  12: {
     title: "Рио",
     author: "Карлос Салданья",
     content: (
@@ -441,7 +476,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  12: {
+  13: {
     title: "Тёмные воды",
     author: "Тодд Хейнс",
     content: (
