@@ -3,7 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Icon from "@/components/ui/icon";
 
-const alphabet = "АБВВГГИМНОПРТДМППСЦ".split("");
+const cinemaAlphabet = "АБВВГГИМНОПРТ".split("");
+const literatureAlphabet = "ДМППСЦ".split("");
 
 const cinemaWorksData: Record<number, { title: string; author: string }> = {
   1: { title: "Аватар", author: "Джеймс Кэмерон" },
@@ -30,10 +31,14 @@ const literatureWorksData: Record<number, { title: string; author: string }> = {
   21: { title: "Царь-рыба", author: "Виктор Астафьев" }
 };
 
-const createWorks = (dataMap: Record<number, { title: string; author: string }>, idOffset: number) => {
+const createWorks = (
+  dataMap: Record<number, { title: string; author: string }>, 
+  alphabet: string[], 
+  idOffset: number
+) => {
   return alphabet.map((letter, index) => {
     const id = index + 1 + idOffset;
-    const workInfo = dataMap[index + 1] || {
+    const workInfo = dataMap[id] || {
       title: `Произведение на букву ${letter}`,
       author: "Автор не указан"
     };
@@ -52,8 +57,8 @@ const createWorks = (dataMap: Record<number, { title: string; author: string }>,
   });
 };
 
-const cinemaWorks = createWorks(cinemaWorksData, 0);
-const literatureWorks = createWorks(literatureWorksData, 26);
+const cinemaWorks = createWorks(cinemaWorksData, cinemaAlphabet, 0);
+const literatureWorks = createWorks(literatureWorksData, literatureAlphabet, 15);
 
 const WorksGrid = ({ works }: { works: typeof cinemaWorks }) => (
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-6">
