@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Icon from "@/components/ui/icon";
 
 const cinemaAlphabet = "АБВВГГИМНОПРТ".split("");
-const literatureAlphabet = "ДМППСЦ".split("");
+const literatureAlphabet = "ДЛМППСЦ".split("");
 
 const cinemaWorksData: Record<number, { title: string; author: string }> = {
   1: { title: "Аватар", author: "Джеймс Кэмерон" },
@@ -24,11 +24,12 @@ const cinemaWorksData: Record<number, { title: string; author: string }> = {
 
 const literatureWorksData: Record<number, { title: string; author: string }> = {
   16: { title: "Дюна", author: "Фрэнк Герберт" },
-  17: { title: "Маленький принц", author: "Антуан де Сент-Экзюпери" },
-  18: { title: "Прощание с Матёрой", author: "Валентин Распутин" },
-  19: { title: "Повелитель мух", author: "Уильям Голдинг" },
-  20: { title: "Светлячок", author: "Харлан Эллисон" },
-  21: { title: "Царь-рыба", author: "Виктор Астафьев" }
+  17: { title: "Лоракс", author: "Теодор Сьюз" },
+  18: { title: "Маленький принц", author: "Антуан де Сент-Экзюпери" },
+  19: { title: "Прощание с Матёрой", author: "Валентин Распутин" },
+  20: { title: "Повелитель мух", author: "Уильям Голдинг" },
+  21: { title: "Светлячок", author: "Харлан Эллисон" },
+  22: { title: "Царь-рыба", author: "Виктор Астафьев" }
 };
 
 const createWorks = (
