@@ -99,22 +99,22 @@ const galleryData: Record<number, string[]> = {
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
-  19: [
-    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/f98d324a-c346-40a9-85a6-3464f028b8fd.jpg",
-    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
-    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
-  ],
   20: [
-    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/b5efab2e-47d5-4a85-bc78-b68dd50aff6e.jpg",
-    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg",
-    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg"
-  ],
-  20: [
-    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/8d07e524-6e5a-47cd-a402-8a001d434e55.jpg",
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/8f30fb9b-4f63-48a3-87ed-dd4a0895bd9a.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
   ],
   21: [
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/f98d324a-c346-40a9-85a6-3464f028b8fd.jpg",
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg",
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
+  ],
+  22: [
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/8d07e524-6e5a-47cd-a402-8a001d434e55.jpg",
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0f08bb4e-3d78-4ec7-ba7e-0a99899040dd.jpg",
+    "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
+  ],
+  23: [
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/228dcb30-2847-49b2-8944-aed2c0267777.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/0ef1b41e-b0cd-4f88-8f30-a35bb0771584.jpg",
     "https://cdn.poehali.dev/projects/d409d741-12c4-419f-af5b-acc9a2b3292b/files/728fad1a-c3a7-4a06-acb0-8a298cd4c87c.jpg"
@@ -609,25 +609,26 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  19: {
+  20: {
     title: "Под куполом",
     author: "Стивен Кинг",
     content: (
       <>
+        <h4 className="text-xl font-serif font-semibold text-foreground mb-3">А что если купол — это не просто метафора</h4>
         <p className="mb-4">
-          Книга «Под Куполом» — это захватывающая история, которая поднимает важные вопросы экологии. В центре сюжета находится один маленький американский городок, который в один прекрасный день накрывает купол. Купол в один момент отрезает людей городка и весь остальной мир, во внутрь купола не может проникнуть ничего.
+          Роман Стивена Кинга «Под Куполом» использует фантастическую предпосылку как мощную экологическую метафору. Город Честерс-Милл, внезапно отрезанный от мира непроницаемым куполом, становится моделью планеты Земля с её ограниченными ресурсами и замкнутой экосистемой.
         </p>
         <p className="mb-4">
-          Стивен Кинг использует Купол как метафору планеты Земля, а жителей города сравнивает со всем человечеством, которое существует в замкнутой экосистеме с ограниченными ресурсами. Изоляция позволила Кингу рассмотреть глобальные проблемы: загрязнение окружающей среды, истощение природных запасов и бездумное отношение к своему единственному дому.
+          Кинг через изоляцию рассматривает глобальные проблемы: загрязнение воздуха (внутренняя поверхность купола чернеет от выхлопов), истощение запасов и бездумное потребление. Персонажи вроде Большого Джима, наладившего вредное производство, олицетворяют хищническое отношение к среде. Их противники пытаются понять природу Купола и спасти город.
         </p>
         <p className="mb-4">
-          Роман выступает как экологическая метафора, где автор показывает бездумное отношение людей к своему дому. Книга отражает проблемы, которые присущи всей планете: ограниченные ресурсы, загрязнение воздуха, потепление климата. Чтобы не было таких серьезных проблем, нужно чаще поднимать проблемы экологии и их решать.
+          Автор убедительно показывает, что халатное отношение к своему «дому» ведёт к катастрофе, будь то вымышленный город или вся планета. Роман заставляет задуматься: а не живём ли мы все уже под таким же невидимым куполом, где воздух отравляется, ресурсы иссякают, а климат становится теплее? Его главная мысль — проблемы экологии касаются каждого, и начинать действовать нужно уже сейчас, начиная с малого, иначе будущим поколениям просто не выжить.
         </p>
         <p className="text-right text-muted-foreground mt-6 italic">София Невзорова</p>
       </>
     )
   },
-  20: {
+  21: {
     title: "Пикник на обочине",
     author: "Аркадий и Борис Стругацкие",
     content: (
@@ -645,7 +646,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  20: {
+  22: {
     title: "Светлячок",
     author: "Харлан Эллисон",
     content: (
@@ -663,7 +664,7 @@ const workData: Record<number, { title: string; author: string; content: JSX.Ele
       </>
     )
   },
-  21: {
+  23: {
     title: "Царь-рыба",
     author: "Виктор Астафьев",
     content: (
